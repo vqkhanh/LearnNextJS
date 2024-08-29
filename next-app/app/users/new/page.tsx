@@ -1,9 +1,9 @@
 import React from 'react'
 
-const newrout = () => {
+const user = () => {
   return (
-    <div>newrout</div>
+    <div>user</div>
   )
 }
 
-export default newrout
+export default user
