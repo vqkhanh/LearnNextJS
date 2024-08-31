@@ -11,6 +11,7 @@ const UsersPage = async () => {
   return (
     <>
     <h1>Users</h1>
+    <h1>test git vscode</h1>
     {new Date().toLocaleTimeString()}
     <ul>
       {users.map(user => <li key={user.id}>{user.name}</li>)}
