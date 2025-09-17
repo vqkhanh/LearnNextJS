@@ -1,22 +1,15 @@
 import React from 'react'
+import UserTable from './UserTable';
 
 interface User {
   id: number;
   name: string;
+  email: string
 }
 
 const UsersPage = async () => {
-    const res = await fetch('https://jsonplaceholder.typicode.com/users', {cache: 'no-store'});
-    const users: User[] = await res.json();
   return (
-    <>
-    <h1>Users</h1>
-    <h1>test git vscode</h1>
-    {new Date().toLocaleTimeString()}
-    <ul>
-      {users.map(user => <li key={user.id}>{user.name}</li>)}
-    </ul>
-    </>
+    <UserTable />
   )
 }
 
