@@ -1,16 +1,24 @@
-import React from 'react'
-import UserTable from './UserTable';
+import React from "react";
+import UserTable from "./UserTable";
 
 interface User {
   id: number;
   name: string;
-  email: string
+  email: string;
 }
 
-const UsersPage = async () => {
+interface Props {
+  searchParams: { sortOrder: string };
+}
+
+const UsersPage = async ({ searchParams: { sortOrder } }: Props) => {
+  console.log(sortOrder);
   return (
-    <UserTable />
-  )
-}
+    <>
+      <h1>Users</h1>
+      <UserTable sortOrder={sortOrder} />
+    </>
+  );
+};
 
-export default UsersPage
+export default UsersPage;
