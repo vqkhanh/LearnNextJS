@@ -2,6 +2,12 @@ import React from "react";
 import Link from "next/link";
 import { sort } from "fast-sort";
 
+interface User {
+  id: number;
+  name: string;
+  email: string;
+}
+
 interface Props {
   sortOrder: string;
 }
