@@ -10,9 +10,12 @@ const ErrorPage = ({ error, reset }: Props) => {
   console.log("Error:", error);
   return (
     <>
-  <div> ErrorPage</div>);
-  <button className="btn" onClick={() => reset()}>Retry</button>
-  </>
+      <div> ErrorPage</div>);
+      <button className="btn" onClick={() => reset()}>
+        Retry
+      </button>
+    </>
+  );
 };
 
 export default ErrorPage;
