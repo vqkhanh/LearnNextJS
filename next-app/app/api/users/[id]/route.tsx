@@ -2,6 +2,7 @@ import { error } from "console";
 import { NextRequest, NextResponse } from "next/server";
 import schema from "../schema";
 import prisma from "@/prisma/client";
+import { use } from "react";
 
 export async function GET(
   request: NextRequest,
@@ -42,4 +43,22 @@ export async function PUT(
     },
   });
   return NextResponse.json(updatedUser);
+}
+
+export async function DELETE(
+  request: NextRequest,
+  { params }: { params: { id: string } }
+) {
+  const user = await prisma.user.findUnique({
+    where: { id: parseInt(params.id) },
+  });
+
+  if (!user)
+    return NextResponse.json({ error: "User not found" }, { status: 404 });
+
+  await prisma.user.delete({
+    where: { id: user.id },
+  });
+
+  return NextResponse.json({});
 }
