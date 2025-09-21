@@ -9,6 +9,7 @@ export default async function Home() {
         alt="student"
         fill
         className="object-cover"
+        sizes="100vw"
       />
     </main>
   );
